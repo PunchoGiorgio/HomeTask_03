@@ -9,12 +9,11 @@ text = input("Enter the search text: ")
 
 test_list = []
 for i in mylist:
-    if text.lower() == i[2:-3].lower():
-        test_list.append(i[2:-3])
+    if text.lower() in i.lower():
         test_list.append(i)
 
 if len(test_list):
-    print(f"The searched word '{test_list[0]}' has found, at index {mylist.index(test_list[1])}")
+    print(f"The searched word '{text}' has been found for {len(test_list)} times")
 
 elif not len(test_list):
     print("There is no such word in the list")
