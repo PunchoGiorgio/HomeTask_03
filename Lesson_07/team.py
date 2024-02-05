@@ -8,10 +8,7 @@ team: list[dict] = [
     {"name": "Cavin", "age": 31, "number": 12},
 ]
 
-
-list_numb = []
-for i in team:
-    list_numb.append(i["number"])
+list_numb = [i["number"] for i in team]
 
 
 # Application source code
@@ -31,12 +28,15 @@ def player_add(name: str, age: int, number: int) -> dict:
 
 
 def player_update(name: str, age: int, number: int) -> dict:
+
+    list_numb_update = [i["number"] for i in team]
+
     new_data: dict = {"name": name, "age": age, "number": number}
 
     x = new_data["number"]
 
-    if x in list_numb:
-        team[list_numb.index(x)] = new_data
+    if x in list_numb_update:
+        team[list_numb_update.index(x)] = new_data
         return new_data
     else:
         print("There is no player with that number")
