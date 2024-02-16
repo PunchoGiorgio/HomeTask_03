@@ -3,3 +3,4 @@
 venv
 rockyou.txt
 .ruff_cache
+__pycache__/
